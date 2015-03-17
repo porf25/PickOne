@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PickOne</string>
+    <string name="hello_world">"This app will help you decide what you want to do when you have a few options that are all awesome but just can't decide on how to pick one. Hence the name.... PickOne."</string>
+    <string name="welcome">Welcome to PickOne</string>
+    <string name="action_settings">Settings</string>
+    <string name="thinking_description">Man Thinking</string>
+    <string name="button_text">Start</string>
+    <string name="title_activity_choose_options">ChooseOptions</string>
+    <string name="options_hint">"This is the page where you enter your options..."</string>
+    <string name="title_activity_see_list">SeeList</string>
+
+</resources>
