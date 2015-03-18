@@ -8,7 +8,12 @@
     <string name="thinking_description">Man Thinking</string>
     <string name="button_text">Start</string>
     <string name="title_activity_choose_options">ChooseOptions</string>
-    <string name="options_hint">"This is the page where you enter your options..."</string>
+    <string name="options_hint">"If you are trying to decide what to do, just add whatever it is you are choosing between to the list and prepare to let me choose for you :)"</string>
     <string name="title_activity_see_list">SeeList</string>
+    <string name="choosing_screen_edittext_hint">Please enter an item here...</string>
+    <string name="addToListButtonText">Add To List</string>
+    <string name="viewListButtonText">View List</string>
+    <string name="seeListPickButton">PickOne</string>
+    <string name="title_activity_results">Results</string>
 
 </resources>

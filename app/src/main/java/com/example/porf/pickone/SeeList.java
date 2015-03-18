@@ -1,9 +1,15 @@
 package com.example.porf.pickone;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 public class SeeList extends ActionBarActivity {
@@ -12,6 +18,20 @@ public class SeeList extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_list);
+
+        //get the intent that called this activity
+        Intent listActivity = getIntent();
+
+        //get the data that was sent over by the intent
+        ArrayList<String> Lista = listActivity.getStringArrayListExtra("The List");
+
+        ListAdapter ListaAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                Lista);
+
+        ListView theListView = (ListView) findViewById(R.id.listViewItem);
+
+        theListView.setAdapter(ListaAdapter);
+
     }
 
 

@@ -24,6 +24,10 @@
             android:name=".SeeList"
             android:label="@string/title_activity_see_list" >
         </activity>
+        <activity
+            android:name=".Results"
+            android:label="@string/title_activity_results" >
+        </activity>
     </application>
 
 </manifest>

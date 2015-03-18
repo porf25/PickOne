@@ -1,6 +1,7 @@
 package com.example.porf.pickone;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 
 public class ChooseOptions extends ActionBarActivity {
 
-    ArrayList<String> Lista = new ArrayList();
+    ArrayList<String> Lista = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +52,16 @@ public class ChooseOptions extends ActionBarActivity {
 
 
     public void addToList(View ListAddView){
-        System.out.println("Just something here");
-        String input = "something to make it work";
+
+
         EditText getInputText = (EditText) findViewById(R.id.enterItem);
-        input = getInputText.getText().toString().trim();
-        TextView tv = (TextView) findViewById(R.id.textViewWarning);
+        String input = getInputText.getText().toString().trim();
+
         TextView inputBox =(TextView) findViewById(R.id.enterItem);
 
         if(input.isEmpty()){
             System.out.println("we made it to the if statement with  " + input);
-            //tv.setVisibility(View.VISIBLE);
+
             String errorText = "Cannot add a blank item to the list, please add something and try again!";
             Toast.makeText(this, errorText, Toast.LENGTH_SHORT).show();
 
@@ -73,10 +74,10 @@ public class ChooseOptions extends ActionBarActivity {
            Lista.add(input);
            System.out.println("this is what was added to the list " + input);
            inputBox.setText("");
-           //tv.setVisibility(View.INVISIBLE);
+
             String addedText = input + " added to the list!";
             Toast.makeText(this, addedText, Toast.LENGTH_SHORT).show();
-            //tv.setText(input + " added to the list!");
+
 
             InputMethodManager imm = (InputMethodManager)getSystemService(
                     Context.INPUT_METHOD_SERVICE);
@@ -86,6 +87,16 @@ public class ChooseOptions extends ActionBarActivity {
                System.out.println("Lista has item " + s);
            }
         }
+
+    }
+
+    public void seeList(View view) {
+
+        Intent seeListIntent = new Intent(this, SeeList.class);
+
+        seeListIntent.putStringArrayListExtra("The List", Lista);
+
+        startActivity(seeListIntent);
 
     }
 }
