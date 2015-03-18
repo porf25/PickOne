@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.porf.pickone.SeeList">
+    tools:context="com.example.porf.pickone.SeeList"
+    android:background="#fffff376">
 
     <ListView
         android:layout_width="match_parent"
@@ -18,6 +19,10 @@
     <Button
         android:layout_width="fill_parent"
         android:text="@string/seeListPickButton"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="pickOne"
+        android:layout_marginTop="10dp"
+        android:background="#ffffffff" />
+
 
 </LinearLayout>

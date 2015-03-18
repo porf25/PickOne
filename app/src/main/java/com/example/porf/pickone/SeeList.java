@@ -5,14 +5,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class SeeList extends ActionBarActivity {
+
+    private ArrayList<String> Lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,7 @@ public class SeeList extends ActionBarActivity {
         Intent listActivity = getIntent();
 
         //get the data that was sent over by the intent
-        ArrayList<String> Lista = listActivity.getStringArrayListExtra("The List");
+        Lista = listActivity.getStringArrayListExtra("The List");
 
         ListAdapter ListaAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                 Lista);
@@ -55,5 +60,15 @@ public class SeeList extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void pickOne(View view) {
+        Random r = new Random();
+        int RandomNumber = r.nextInt(Lista.size());
+        String winner = "The item chosen at random is " + Lista.get(RandomNumber);
+
+        Toast.makeText(this, winner, Toast.LENGTH_LONG).show();
+
+
     }
 }
