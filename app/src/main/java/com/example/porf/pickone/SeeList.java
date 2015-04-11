@@ -63,11 +63,17 @@ public class SeeList extends ActionBarActivity {
     }
 
     public void pickOne(View view) {
-        Random r = new Random();
-        int RandomNumber = r.nextInt(Lista.size());
-        String winner = "The item chosen at random is " + Lista.get(RandomNumber);
+        if(Lista.size() < 1){
+            Toast.makeText(this, "Cannot have a blank List, please go back and add some items", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Random r = new Random();
+            int RandomNumber = r.nextInt(Lista.size());
+            String winner = "The item chosen at random is " + Lista.get(RandomNumber);
 
-        Toast.makeText(this, winner, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, winner, Toast.LENGTH_LONG).show();
+        }
+
 
 
     }
